@@ -1,40 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Practice Project Assignment: NextEvents - A Simple Event Listing App
 
-## Getting Started
+## Objective
 
-First, run the development server:
+Build a basic event listing app using Next.js 13 App Router, React components, dynamic routing, styling, and navigation — similar to the course, but with different data and structure to reinforce your understanding.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You will build **NextEvents**, a web app for browsing upcoming workshops. The app will include:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- A homepage
+- A page listing all workshops
+- A dynamic route for individual workshop details
+- A filtered view by month and year
+- A general layout with shared navigation
+- Static dummy data for the events
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Assignment Steps
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+**Module Intro & Planning**  
+Sketch or write down a rough plan for your app structure. Determine what pages and components you will need.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Main Pages Setup**  
+Create the following pages:
+- `/`
+- `/workshops`
+- `/workshops/[...slug]`
+- A custom 404 page
 
-## Learn More
+**Dummy Data & Static Files**  
+Create a JavaScript file that exports an array of dummy workshop data. Each event should include: `id`, `title`, `description`, `location`, and `date`. Optionally, add images in the `/public/images` directory.
 
-To learn more about Next.js, take a look at the following resources:
+**React Components**  
+Build a `WorkshopItem` component for individual events and a `WorkshopList` component to render a list of items.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+**Connecting Components**  
+Display the list of workshops on the `/workshops` page using your dummy data and components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Styling**  
+Apply styling using CSS Modules or Tailwind CSS (if preferred). Style elements such as list items, buttons, and layout structure.
 
-## Deploy on Vercel
+**Next.js Navigation**  
+Replace all `<a>` tags with Next.js `<Link>` components for internal navigation between pages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Buttons & Icons**  
+Add an "Explore" button to each workshop card. Include a basic SVG icon next to the event's location.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+**Dynamic Route (Detail Page)**  
+Create the `/workshops/[eventId]` page using dynamic routing to show event details from the dummy data.
+
+**Layout Wrapper**  
+Create a shared `Layout` component with a header. Use it across all pages for consistent structure.
+
+**All Events Page**  
+Ensure the `/workshops` page shows all events without any filtering.
+
+**Filter Form**  
+Create a form with dropdowns to filter events by year and month.
+
+**Filtered Events Page**  
+Use programmatic navigation (e.g., `router.push()`) to redirect to `/workshops/[year]/[month]` based on form input.
+
+**Catch-All Page**  
+Implement a `[...slug].js` file to handle the dynamic filtering route. Display an appropriate message if no events match the selected year and month.
+
+**Final Touches**  
+Test the navigation and handle edge cases, such as no events found for the selected filter criteria.
+
+Bonus Challenges (Optional)
+Add a search bar to filter workshops by keyword.
+
+Add pagination if more than X workshops exist.
+
+Use getStaticProps or getServerSideProps (if not already used).
+
+Animate page transitions or loading states.
