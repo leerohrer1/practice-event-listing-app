@@ -4,12 +4,19 @@ function MainHeader() {
   return (
     <header>
       <div>
-        <Link href="/">Events</Link>
+        <Link href="/" style={{ color: "white", textDecoration: "none" }}>
+          Home
+        </Link>
       </div>
       <nav>
         <ul>
           <li>
-            <Link href="/events">All Events</Link>
+            <Link
+              href="/events"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Search All Events
+            </Link>
           </li>
         </ul>
       </nav>

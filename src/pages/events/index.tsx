@@ -51,30 +51,37 @@ export default function EventsPage() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="year">Year</label>
-      <select id="year" name="year">
-        <option value="2025">2025</option>
-        <option value="2026">2026</option>
-      </select>
+      <div className="controls">
+        <div className="control">
+          <label htmlFor="year">Year</label>
+          <select id="year" name="year">
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
 
-      <label htmlFor="month">Month</label>
-      <select id="month" name="month">
-        {uniqueMonths.map((month) => (
-          <option key={month} value={month}>
-            {months[month]}
-          </option>
+          <label htmlFor="month">Month</label>
+          <select id="month" name="month">
+            {uniqueMonths.map((month) => (
+              <option key={month} value={month}>
+                {months[month]}
+              </option>
+            ))}
+          </select>
+          <button type="submit">Search</button>
+          <button type="button" onClick={handleSeeAllClick}>
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <ul>
+        {(isFiltered ? filteredWorkshops : workshops).map((event) => (
+          <li key={event.id}>
+            <Event prop={event} />
+          </li>
         ))}
-      </select>
-
-      <button type="submit">Search</button>
-      <button type="button" onClick={handleSeeAllClick}>
-        See All
-      </button>
-      {(isFiltered ? filteredWorkshops : workshops).map((event) => (
-        <Event key={event.id} prop={event} />
-      ))}
-
-      {isFiltered && filteredWorkshops.length === 0 && <h2>No Events Found</h2>}
+      </ul>
+      {isFiltered && filteredWorkshops.length === 0 && <h2 style={{textAlign: "center"}}>No Events Found</h2>}
     </form>
   );
 }

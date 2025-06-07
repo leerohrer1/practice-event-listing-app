@@ -21,17 +21,33 @@ export default function Event({ prop }: EventProp) {
 
   return (
     <>
-      <div key={prop.id}>
-        <Link href={`/events/${year}/${month}/${day}`}>{prop.title}</Link>
-        <div>{prop.date}</div>
-        <div>{prop.location}</div>
-        <p>{prop.description}</p>
-        <Image
-          src={prop.image}
-          width={300}
-          height={200}
-          alt={prop.title}
-        />
+      <div key={prop.id} className="content">
+        <div className="list">
+          <Link
+            href={`/events/${year}/${month}/${day}`}
+            style={{
+              fontSize: "2rem",
+              color: "black",
+              textDecoration: "none",
+            }}
+          >
+            {prop.title}
+          </Link>
+          <Image
+            src={prop.image}
+            width={300}
+            height={200}
+            alt={prop.title}
+            style={{
+              borderRadius: "5%",
+              overflow: "hidden",
+              border: "2px solid white",
+            }}
+          />
+          <div>{prop.date}</div>
+          <div>{prop.location}</div>
+          <p>{prop.description}</p>
+        </div>
       </div>
     </>
   );
