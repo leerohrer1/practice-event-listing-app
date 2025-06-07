@@ -10,10 +10,11 @@ You will build **NextEvents**, a web app for browsing upcoming workshops. The ap
 
 - A homepage
 - A page listing all workshops
-- A dynamic route for individual workshop details
+<!-- - A dynamic route for individual workshop details -->
 - A filtered view by month and year
 - A general layout with shared navigation
 - Static dummy data for the events
+- Basic styling
 
 ## Assignment Steps
 

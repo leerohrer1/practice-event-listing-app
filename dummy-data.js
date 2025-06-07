@@ -5,9 +5,8 @@ const DUMMY_WORKSHOPS = [
     description:
       'Learn the basics of React.js including components, props, and state in this beginner-friendly workshop.',
     location: 'New York City, NY',
-    date: '2025-07-10',
+    date: '2026-07-10',
     image: '/images/react-basics.jpg',
-    isFeatured: true,
   },
   {
     id: 'w2',
@@ -17,7 +16,6 @@ const DUMMY_WORKSHOPS = [
     location: 'Online (Zoom)',
     date: '2025-08-05',
     image: '/images/nextjs-course.jpg',
-    isFeatured: true,
   },
   {
     id: 'w3',
@@ -27,7 +25,6 @@ const DUMMY_WORKSHOPS = [
     location: 'San Francisco, CA',
     date: '2025-09-15',
     image: '/images/typescript-bootcamp.jpg',
-    isFeatured: false,
   },
   {
     id: 'w4',
@@ -35,9 +32,8 @@ const DUMMY_WORKSHOPS = [
     description:
       'Understand the basics of user-centered design, layout principles, and usability testing.',
     location: 'Chicago, IL',
-    date: '2025-07-21',
+    date: '2026-07-21',
     image: '/images/ui-ux.jpg',
-    isFeatured: false,
   },
   {
     id: 'w5',
@@ -47,7 +43,6 @@ const DUMMY_WORKSHOPS = [
     location: 'Austin, TX',
     date: '2025-08-25',
     image: '/images/css-animations.jpg',
-    isFeatured: true,
   },
 ];
 
